@@ -1,0 +1,47 @@
+$primary-color: red;
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container-1 {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content:center;
+    align-content: center;
+}
+
+.box {
+    border-radius: 0.5rem;
+    font-weight: bold;
+    color:rgb(196, 194, 194);
+    width:150px;
+    height:200px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.base-color {
+    width:200px ;
+    background-color: $primary-color;
+    font-weight: normal;
+}
+
+$i: 1;
+@while $i <= 4 {
+    .darken-#{$i} {
+        background-color: darken($primary-color, $i * 10%);
+    }
+    $i:$i + 1;
+}
+$j:1;
+@while $j <= 4 {
+    .lighten-#{$j} {
+        background-color: lighten($primary-color, $j * 10%);
+    }
+    $j:$j + 1;
+}
